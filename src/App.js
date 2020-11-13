@@ -1,26 +1,16 @@
-import React from 'react';
-import JumbotronList from './fixtures/jumbo.json';
-import Jumbotron from './components/jumbotron';
+import React from 'react'
+import AccordionContainer from './containers/Accordion'
+import FooterContainer from './containers/Footer'
+import JumbotronContainer from './containers/Jumbotron'
+
 function App() {
   return (
-    <div>
-      <Jumbotron.Container>
-        {JumbotronList.map((item) => {
-          return (
-            <Jumbotron key={item.id} direction={item.direction}>
-              <Jumbotron.Pane>
-                <Jumbotron.Title>{item.title}</Jumbotron.Title>
-                <Jumbotron.SubTitle>{item.subTitle}</Jumbotron.SubTitle>
-              </Jumbotron.Pane>
-              <Jumbotron.Pane>
-                <Jumbotron.Image src={item.image} alt={item.alt} />
-              </Jumbotron.Pane>
-            </Jumbotron>
-          );
-        })}
-      </Jumbotron.Container>
-    </div>
-  );
+    <>
+      <JumbotronContainer />
+      <AccordionContainer /> 
+      <FooterContainer />
+    </>
+  )
 }
 
-export default App;
+export default App
