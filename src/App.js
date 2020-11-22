@@ -5,9 +5,10 @@ import Browser from './pages/Browser';
 import Home from './pages/home';
 import Signin from './pages/Signin';
 import Signup from './pages/Signup';
+import useAuthListener from './hooks/useAuthListener'
 
 function App() {
-  const user = {};
+  const {user} = useAuthListener();
   return (
     <BrowserRouter>
       <Switch>
@@ -28,5 +29,8 @@ function App() {
     </BrowserRouter>
   );
 }
+
+//ProtectedRoute > <Redirect to={{ pathname: '/signin', state: { from: location } }} /> ????????????
+
 
 export default App;

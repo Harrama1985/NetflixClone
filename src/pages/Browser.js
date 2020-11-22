@@ -1,11 +1,15 @@
-import React from 'react'
+import React from 'react';
+import BrowserContainer from '../containers/browser';
+import useContent from '../hooks/useContent';
+import selectionMap from '../utils/selectionMap';
 
 function Browser() {
-    return (
-        <div>
-            salam browser
-        </div>
-    )
+  const { series } = useContent('series');
+  const { films } = useContent('films');
+  const slides = selectionMap({ series, films });
+  
+  return <BrowserContainer slides={slides}/>;
+  
 }
 
-export default Browser
+export default Browser;

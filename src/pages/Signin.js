@@ -17,11 +17,13 @@ function Signin(props) {
     return firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
-      .then(() => {props.history.push('/browser')})
-      .catch((err)=>{
-        setEmail('')
-        setPassword('')
-        setError(err.message)
+      .then(() => {
+        props.history.push('/browser');
+      })
+      .catch((err) => {
+        setEmail('');
+        setPassword('');
+        setError(err.message);
       });
   };
   return (
@@ -29,7 +31,7 @@ function Signin(props) {
       <HeaderContainer>
         <Form>
           <Form.Title>Sign in</Form.Title>
-            {error && <Form.Error>{error}</Form.Error>}
+          {error && <Form.Error>{error}</Form.Error>}
           <Form.Base onSubmit={handleSignin} method="POST">
             <Form.Input
               placeholder="Email Address"
