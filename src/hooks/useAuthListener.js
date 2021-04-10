@@ -13,7 +13,6 @@ export default function useAuthListener(){
               localStorage.removeItem('useAuth')
               setuser('')
             }
-            
           });
           return ()=> listener() ;
     }, [])

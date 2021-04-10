@@ -15,7 +15,6 @@ function App() {
         <IsUserRedirect exact user={user} loggedInPath="/browser" path="/">
           <Home />
         </IsUserRedirect>
-
         <ProtectedRoute user={user} path="/browser">
           <Browser />
         </ProtectedRoute>

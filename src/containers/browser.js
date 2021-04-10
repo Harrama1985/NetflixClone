@@ -27,11 +27,10 @@ function BrowserContainer({ slides }) {
   }, [slides, category]);
 
   useEffect(() => {
-    const fuse = new Fuse(slideRows,{keys:['data.description','data.title','data.genre']})
+    const fuse = new Fuse(slideRows,{keys:['data.description','data.title','data.genre']}) //hadi katkhallik tchercher bi ga3 hadok lkeys li fil array
     const result = fuse.search(searchTerm).map(({item})=>item)
     console.log(result);
     if(searchTerm.length > 3 && result.length>0 && slideRows.length>0){
-     
       setSlideRows(result)
     }else{
       console.log('result');
